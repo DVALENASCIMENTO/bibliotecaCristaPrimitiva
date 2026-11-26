@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172b25">
+<title>BCP-001 — Didaquê | Biblioteca Cristã Primitiva</title>
+<style>
+:root{--ink:#1e2b25;--muted:#68766d;--gold:#b58b45;--paper:#fffdf7;--bg:#e9e6dc;--green:#17382e}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#e9e6dc,#d8d4c8);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+header{background:var(--green);color:#fff;padding:18px 5vw;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font:600 12px Arial,sans-serif;letter-spacing:2px;color:#e6d2a7}.brand b{display:block;font:700 19px Georgia,serif;letter-spacing:.5px;color:#fff;margin-top:5px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}.tools button,.nav button{border:1px solid #c8b27f;background:transparent;color:inherit;padding:10px 14px;border-radius:5px;cursor:pointer;font:600 13px Arial}
+.tools button:hover{background:#ffffff18}
+main{max-width:1050px;margin:28px auto;padding:0 16px}
+.cover,.page{background:var(--paper);box-shadow:0 12px 35px #29372c20;border:1px solid #d8d0bd}
+.cover{min-height:610px;padding:70px 9%;display:flex;flex-direction:column;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.cover:before,.cover:after{content:"";position:absolute;border:1px solid #b58b4566;border-radius:50%;width:390px;height:390px;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cover:after{width:350px;height:350px}
+.seal{width:76px;height:76px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 32px;color:var(--gold);font-size:28px}
+.kicker{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(48px,9vw,82px);letter-spacing:5px;margin:18px 0 4px;color:var(--green)}
+.subtitle{font-size:clamp(18px,3vw,25px);font-style:italic;color:#6e6759}
+.rule{width:90px;height:2px;background:var(--gold);margin:28px auto}
+.cover p{font:13px/1.8 Arial,sans-serif;color:var(--muted);letter-spacing:.5px}
+.page{display:none;min-height:610px;padding:55px clamp(24px,7vw,82px) 42px;line-height:1.85;font-size:19px}
+.page.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}
+.page h2{font-size:30px;color:var(--green);margin:0 0 8px}.page .eyebrow{font:700 11px Arial,sans-serif;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.page p{margin:0 0 16px}.page .verse{padding-left:18px;border-left:2px solid #d6bd88;margin:18px 0}
+.page .poem{margin:14px 0 20px 22px;line-height:1.65;font-style:italic}
+.page .pagefoot{margin-top:34px;border-top:1px solid #e3ddcf;padding-top:12px;font:12px Arial,sans-serif;color:#8a8b7d;display:flex;justify-content:space-between}
+.nav{display:flex;align-items:center;justify-content:center;gap:18px;margin:20px auto;color:var(--green);font:14px Arial,sans-serif}
+.nav button{background:var(--green);color:#fff;border:0;min-width:105px}.nav button:disabled{opacity:.35;cursor:not-allowed}
+.progress{height:4px;background:#cfc9b9;max-width:650px;margin:0 auto 24px}.progress span{display:block;height:100%;width:0;background:var(--gold);transition:width .2s}
+.toc{background:#f8f5ec;border:1px solid #d8d0bd;padding:18px 22px;margin:0 auto 20px;max-width:850px}
+.toc summary{cursor:pointer;font:700 13px Arial,sans-serif;letter-spacing:1px;color:var(--green)}
+.tocgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:7px;margin-top:14px}
+.tocgrid button{background:#fff;border:1px solid #ddd4c2;padding:9px;text-align:left;border-radius:3px;cursor:pointer;color:var(--ink);font:13px Arial}
+.tocgrid button:hover{border-color:var(--gold)}
+.source{max-width:850px;margin:25px auto 45px;color:#59665d;font:13px/1.7 Arial,sans-serif}
+.source a{color:#315f4c}
+@media(max-width:600px){header{padding:14px}.cover{min-height:570px;padding:55px 8%}.page{padding:34px 23px;min-height:570px;font-size:17px}.page h2{font-size:25px}.nav{gap:8px}.nav button{min-width:85px;padding:10px 9px}}
+@media print{body{background:white}.tools,.nav,.progress,.toc,header{display:none!important}main{margin:0;padding:0}.cover,.page{display:block!important;box-shadow:none;border:0;min-height:0;page-break-after:always;padding:25mm 20mm}.page{font-size:12pt}.pagefoot{display:none!important}}
+</style>
+</head>
+<body>
+<header><div class="brand">MINISTÉRIO ATALAIA<b>Biblioteca Cristã Primitiva</b></div>
+<div class="tools"><button onclick="window.print()">Imprimir / Salvar PDF</button><button onclick="goCover()">Capa</button></div></header>
+<main>
+<section class="cover" id="cover">
+<div class="seal">✦</div><div class="kicker">Biblioteca Cristã Primitiva · BCP-001</div>
+<h1>DIDAQUÊ</h1><div class="subtitle">O Ensino do Senhor aos gentios por meio dos doze apóstolos</div>
+<div class="rule"></div><p>DOCUMENTO CRISTÃO ANTIGO · 16 CAPÍTULOS</p><p>DO SÉCULO I AO INÍCIO DO SÉCULO II</p><p>MINISTÉRIO ATALAIA</p>
+</section>
+<div class="progress"><span id="bar"></span></div>
+<div class="nav"><button id="prev" onclick="move(-1)">← Anterior</button><span id="counter">Capa</span><button id="next" onclick="move(1)">Próxima →</button></div>
+<details class="toc"><summary>SUMÁRIO — IR DIRETAMENTE A UM CAPÍTULO</summary><div class="tocgrid" id="toc"></div></details>
+<div id="pages">
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 1</div><h2>Os dois caminhos</h2>
+<p>1. Há dois caminhos, um da vida e um da morte, e há grande diferença entre os dois caminhos. O caminho da vida é este. Primeiro: amarás o Deus que te criou; segundo: o teu próximo como a ti mesmo (Mt 22.37-39). E tudo o que não queres que te aconteça, também tu não o faças a outro.</p>
+<p>Ora, o ensino destas palavras é este. Abençoem os que os amaldiçoam (Lc 6.28), orem pelos seus inimigos e jejuem pelos que os perseguem (Mt 5.44); pois que mérito há, se vocês amam os que os amam? Os gentios também não fazem o mesmo (Mt 5.46-47)? Vocês, porém, amem os que os odeiam (Lc 6.27), e não terão inimigo.</p>
+<p>Abstém-te dos desejos carnais e corporais. Se alguém te der um tapa na face direita, oferece-lhe também a outra (Mt 5.39), e serás perfeito; se alguém te obrigar a andar uma milha, vai com ele duas (Mt 5.41); se alguém te tirar a capa, dá-lhe também a túnica (Lc 6.29); se alguém te tomar o que é teu, não o peças de volta (Lc 6.30), pois nem sequer és capaz disso.</p>
+<p>Dá a todo o que te pedir e não peças de volta (Lc 6.30); pois o Pai deseja que se dê a todos dos seus próprios dons. Bem-aventurado o que dá segundo o mandamento, pois é inocente. Ai daquele que recebe; pois, se alguém recebe tendo necessidade, é inocente; mas quem não tem necessidade prestará contas de por que e para que recebeu; e, posto na prisão, será interrogado sobre o que fez, e não sairá dali enquanto não devolver o último centavo (Mt 5.26).</p>
+<p>Mas também a esse respeito foi dito: Que a tua esmola sue nas tuas mãos, até que saibas a quem dar.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 2</div><h2>O segundo mandamento</h2>
+<p>2. E este é o segundo mandamento do ensino. Não matarás, não adulterarás, não corromperás meninos, não praticarás a imoralidade sexual, não furtarás, não praticarás magia, não praticarás feitiçaria, não matarás a criança por aborto nem a matarás depois de nascida, não cobiçarás os bens do teu próximo, não cometerás perjúrio, não darás falso testemunho, não falarás mal de ninguém, não guardarás rancor, não terás duplicidade de pensamento nem de língua; pois a língua dupla é laço de morte.</p>
+<p>A tua palavra não será falsa nem vazia, mas cumprida em obras. Não serás avarento, nem saqueador, nem hipócrita, nem de mau gênio, nem soberbo. Não tramarás o mal contra o teu próximo.</p>
+<p>Não odiarás ninguém; mas a uns repreenderás, por outros orarás, e a outros amarás mais do que a tua própria vida.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 3</div><h2>Fugir do mal e praticar o bem</h2>
+<p>3. Meu filho, foge de todo mal e de tudo o que se parece com ele. Não sejas irascível, pois a ira leva ao homicídio; nem ciumento, nem briguento, nem colérico; pois de todas essas coisas nascem os homicídios.</p>
+<p>Meu filho, não sejas lascivo, pois a lascívia leva à imoralidade; nem de fala obscena, nem de olhar altivo; pois de todas essas coisas nascem os adultérios.</p>
+<p>Meu filho, não pratiques agouros, pois isso leva à idolatria; nem sejas encantador, nem astrólogo, nem mago, nem queiras ver essas coisas; pois de todas elas nasce a idolatria.</p>
+<p>Meu filho, não sejas mentiroso, pois a mentira leva ao furto; nem avarento, nem vaidoso; pois de todas essas coisas nascem os furtos.</p>
+<p>Meu filho, não sejas murmurador, pois isso leva à blasfêmia; nem arrogante, nem de maus pensamentos; pois de todas essas coisas nascem as blasfêmias.</p>
+<p>Mas sê manso, pois os mansos herdarão a terra (Sl 37.11; Mt 5.5). Sê paciente, misericordioso, sem malícia, tranquilo e bondoso, temendo sempre as palavras que ouviste.</p>
+<p>Não exaltarás a ti mesmo, nem darás lugar ao atrevimento na tua alma. A tua alma não se unirá aos soberbos, mas andarás com os justos e humildes. Receberás como bens os acontecimentos que te sobrevierem, sabendo que nada acontece sem Deus.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 4</div><h2>Deveres na comunidade</h2>
+<p>4. Meu filho, noite e dia te lembrarás daquele que te fala a palavra de Deus e o honrarás como ao Senhor; pois onde se fala do senhorio, ali está o Senhor. Além disso, buscarás dia após dia a presença dos santos, para encontrares descanso nas palavras deles.</p>
+<p>Não provocarás divisão, mas pacificarás os que contendem; julgarás com justiça; não farás acepção de pessoas ao repreender as transgressões. Não ficarás em dúvida se uma coisa acontecerá ou não.</p>
+<p>Não sejas encontrado estendendo as mãos para receber e recolhendo-as na hora de dar. Se tiveres algo que passe pelas tuas mãos, darás um resgate pelos teus pecados. Não hesitarás em dar, nem murmurarás ao dar; pois saberás quem é o bom pagador da tua recompensa.</p>
+<p>Não te afastarás de quem passa necessidade, mas repartirás tudo com o teu irmão e não dirás que coisa alguma é tua. Pois, se vocês são participantes em comum do que é imperecível, quanto mais das coisas perecíveis?</p>
+<p>Não retirarás a mão do teu filho ou da tua filha, mas desde a juventude lhes ensinarás o temor de Deus. Não darás ordens com amargura ao teu servo ou à tua serva, que esperam no mesmo Deus que tu, para que não deixem de temer o Deus que está acima de ambos; pois ele não vem chamar os homens fazendo acepção de pessoas, mas vem para aqueles que o Espírito preparou.</p>
+<p>E vocês, servos, sejam submissos aos seus senhores, como a uma imagem de Deus, com pudor e temor.</p>
+<p>Odiarás toda hipocrisia e tudo o que não agrada ao Senhor. Nunca abandonarás os mandamentos do Senhor, mas guardarás o que recebeste, sem nada lhe acrescentar nem tirar. Na igreja, confessarás as tuas transgressões e não irás à oração com má consciência. Este é o caminho da vida.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 5</div><h2>O caminho da morte</h2>
+<p>5. Mas o caminho da morte é este.</p>
+<p>Antes de tudo, é mau e cheio de maldição: homicídios, adultérios, desejos impuros, imoralidades, furtos, idolatrias, artes mágicas, feitiçarias, roubos, falsos testemunhos, hipocrisias, duplicidade de coração, traição, soberba, malícia, obstinação, avareza, linguagem obscena, ciúme, atrevimento, altivez, jactância; perseguidores dos bons, que odeiam a verdade, amam a mentira, não reconhecem a recompensa da justiça, não se apegam ao bem nem ao juízo justo, vigilantes não para o bem, mas para o mal; dos quais estão longe a mansidão e a paciência; que amam as coisas vãs, buscam recompensa, não se compadecem do pobre, não se afadigam pelo oprimido de fadigas, não reconhecem aquele que os criou; assassinos de crianças, corruptores das criaturas de Deus, que se afastam do necessitado, oprimem o aflito, advogados dos ricos, juízes injustos dos pobres, inteiramente pecadores.</p>
+<p>Que vocês sejam livrados, meus filhos, de todas essas coisas.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 6</div><h2>Fidelidade ao ensino</h2>
+<p>6. Cuidem para que ninguém os desvie deste caminho da justiça, pois esse tal te ensina à parte de Deus. Pois, se és capaz de carregar todo o jugo do Senhor, serás perfeito; mas, se não és capaz, faze o que puderes. Quanto à comida, suporta o que puderes; mas abstém-te de modo absoluto da carne sacrificada aos ídolos, pois é culto a deuses mortos.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 7</div><h2>Sobre o batismo</h2>
+<p>7. Quanto ao batismo, batizem assim. Tendo primeiro exposto todas estas coisas, batizem em nome do Pai e do Filho e do Espírito Santo (Mt 28.19), em água viva (corrente). Mas, se não tiveres água viva, batiza em outra água; e, se não puderes em água fria, em água morna. Mas, se não tiveres nem uma nem outra, derrama água sobre a cabeça três vezes, em nome do Pai e do Filho e do Espírito Santo.</p>
+<p>E, antes do batismo, jejuem o que batiza e o que é batizado, e alguns outros que puderem; e ordenarás ao que vai ser batizado que jejue um ou dois dias antes.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 8</div><h2>Jejum e oração</h2>
+<p>8. E que os seus jejuns não sejam com os hipócritas, pois eles jejuam no segundo e no quinto dia da semana; mas vocês jejuem no quarto dia e no dia da preparação (o sexto).</p>
+<p>Nem orem como os hipócritas, mas, como o Senhor ordenou no seu evangelho, orem assim:</p>
+<div class="poem">Pai nosso, que estás no céu,<br>santificado seja o teu nome;<br>venha o teu Reino;<br>seja feita a tua vontade,<br>assim no céu como na terra;<br>o pão nosso de cada dia nos dá hoje;<br>e perdoa-nos a nossa dívida,<br>assim como nós também perdoamos aos nossos devedores;<br>e não nos deixes cair em tentação,<br>mas livra-nos do maligno;<br>pois teu é o poder e a glória para todo o sempre (Mt 6.9-13).</div>
+<p>Orem assim três vezes por dia.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 9</div><h2>A ação de graças eucarística</h2>
+<p>9. Quanto à ação de graças eucarística, deem graças assim. Primeiro, quanto ao cálice:</p>
+<div class="poem">Nós te damos graças, ó nosso Pai,<br>pela santa videira de Davi, teu filho,<br>que nos deste a conhecer<br>por meio de Jesus, teu Filho;<br>tua é a glória para todo o sempre.</div>
+<p>Depois, quanto ao pão partido:</p>
+<div class="poem">Nós te damos graças, ó nosso Pai,<br>pela vida e pelo conhecimento<br>que nos deste a conhecer<br>por meio de Jesus, teu Filho;<br>tua é a glória para todo o sempre.<br>Assim como este pão partido estava disperso sobre os montes<br>e, reunido, tornou-se um só,<br>assim seja reunida a tua igreja<br>desde os confins da terra no teu reino;<br>pois tua é a glória e o poder,<br>por meio de Jesus Cristo, para todo o sempre.</div>
+<p>Mas ninguém coma nem beba desta ação de graças eucarística, senão os que foram batizados em nome do Senhor; pois também a respeito disso o Senhor disse: Não deem aos cães o que é santo (Mt 7.6).</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 10</div><h2>Ação de graças depois da refeição</h2>
+<p>10. E, depois de saciados, deem graças assim:</p>
+<div class="poem">Nós te damos graças, Pai santo,<br>pelo teu santo nome,<br>que fizeste habitar em nossos corações,<br>e pelo conhecimento, pela fé e pela imortalidade<br>que nos deste a conhecer<br>por meio de Jesus, teu Filho;<br>tua é a glória para todo o sempre.</div>
+<p>Tu, Soberano Todo-Poderoso, criaste todas as coisas por causa do teu nome e deste aos homens comida e bebida para que as desfrutassem, a fim de que te rendessem graças; mas a nós concedeste comida e bebida espirituais e a vida eterna por meio do teu Filho.</p>
+<p>Acima de tudo, nós te damos graças porque és poderoso; tua é a glória para todo o sempre.</p>
+<div class="poem">Lembra-te, Senhor, da tua igreja,<br>para livrá-la de todo mal<br>e aperfeiçoá-la no teu amor;<br>e reúne-a dos quatro ventos,<br>a igreja que foi santificada,<br>no teu reino, que lhe preparaste;<br>pois teu é o poder e a glória para todo o sempre.</div>
+<div class="poem">Venha a graça, e passe este mundo.<br>Hosana ao Deus de Davi.<br>Se alguém é santo, venha;<br>se alguém não é, arrependa-se.<br>Maranata. Amém.</div>
+<p>Mas permitam aos profetas dar graças quanto quiserem.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 11</div><h2>Apóstolos e profetas</h2>
+<p>11. Portanto, quem vier e lhes ensinar todas estas coisas que foram ditas acima, recebam-no; mas, se o próprio mestre se desviar e ensinar outra doutrina, para destruir esta, não o ouçam; mas, se for para aumentar a justiça e o conhecimento do Senhor, recebam-no como ao Senhor.</p>
+<p>Quanto aos apóstolos e profetas, procedam segundo a ordem do evangelho. Todo apóstolo que vier a vocês seja recebido como o Senhor; mas não ficará mais de um só dia, ou, se houver necessidade, também um segundo; mas, se ficar três dias, é falso profeta.</p>
+<p>E, quando partir, o apóstolo não receba nada além de pão, até encontrar abrigo; mas, se pedir dinheiro, é falso profeta.</p>
+<p>E nenhum profeta que fala no Espírito vocês devem pôr à prova nem julgar; pois todo pecado será perdoado, mas este pecado não será perdoado (Mt 12.31).</p>
+<p>Contudo, nem todo aquele que fala no Espírito é profeta, mas somente se tiver os costumes do Senhor. Pelos seus costumes, portanto, serão reconhecidos o falso profeta e o profeta.</p>
+<p>E nenhum profeta que, no Espírito, mandar preparar uma mesa comerá dela; do contrário, é falso profeta. E todo profeta que ensina a verdade, se não pratica o que ensina, é falso profeta.</p>
+<p>E todo profeta aprovado e verdadeiro, que faz algo como mistério visível que representa a igreja, mas não ensina vocês a fazer tudo o que ele mesmo faz, não será julgado por vocês; ele tem o seu julgamento diante de Deus; pois do mesmo modo fizeram também os profetas antigos.</p>
+<p>E, se alguém disser no Espírito: Dê-me dinheiro ou qualquer outra coisa, não o ouçam; mas, se mandar dar em favor de outros que estão em necessidade, ninguém o julgue.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 12</div><h2>Acolhimento dos viajantes</h2>
+<p>12. Mas todo aquele que vier em nome do Senhor seja recebido; e depois, tendo-o posto à prova, vocês o conhecerão, pois terão discernimento à direita e à esquerda.</p>
+<p>Se quem chega é um viajante, ajudem-no quanto puderem; mas ele não ficará com vocês mais de dois ou três dias, se for necessário.</p>
+<p>Mas, se quiser estabelecer-se entre vocês e for artesão, trabalhe e coma o seu pão. Mas, se não tiver ofício, providenciem, segundo a sabedoria de vocês, como viverá entre vocês como cristão, mas não na ociosidade.</p>
+<p>Se não quiser fazer isso, está fazendo comércio de Cristo. Guardem-se de tais pessoas.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 13</div><h2>Sustento dos profetas e mestres</h2>
+<p>13. Mas todo verdadeiro profeta que quiser estabelecer-se entre vocês é digno do seu alimento. Do mesmo modo, também o verdadeiro mestre é digno, como o trabalhador, do seu alimento (Mt 10.10).</p>
+<p>Tomarás, pois, todas as primícias dos produtos do lagar e da eira, dos teus bois e das tuas ovelhas, e as darás como primícias aos profetas; pois eles são os seus sumos sacerdotes. Mas, se vocês não tiverem profeta, deem-nas aos pobres.</p>
+<p>Se fizeres pão, toma as primícias e dá segundo o mandamento. Do mesmo modo, quando abrires uma jarra de vinho ou de azeite, toma as primícias e dá aos profetas; e também do dinheiro, das roupas e de todo bem, toma as primícias, como te parecer bem, e dá segundo o mandamento.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 14</div><h2>A reunião no dia do Senhor</h2>
+<p>14. E no dia do Senhor reúnam-se, partam o pão e deem graças, depois de confessarem as suas transgressões, para que o sacrifício de vocês seja puro.</p>
+<p>E ninguém que tenha desavença com o seu companheiro se junte à assembleia de vocês, até que se reconciliem, para que o sacrifício de vocês não seja profanado; pois este é o sacrifício de que o Senhor falou: Em todo lugar e em todo tempo, ofereçam-me um sacrifício puro; porque eu sou grande Rei, diz o Senhor, e o meu nome é admirável entre as nações (Ml 1.11, 14).</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 15</div><h2>Bispos, diáconos e correção fraterna</h2>
+<p>15. Escolham, pois, para si bispos e diáconos dignos do Senhor, homens mansos, que não amem o dinheiro, verdadeiros e aprovados; pois também eles prestam a vocês o serviço dos profetas e mestres. Portanto, não os desprezem; pois eles são, entre vocês, os honrados, juntamente com os profetas e mestres.</p>
+<p>E repreendam-se uns aos outros, não com ira, mas em paz, como encontram no evangelho; e ninguém fale com quem tiver ofendido o seu próximo, nem ouça uma palavra de vocês, até que se arrependa. Quanto às suas orações, às suas esmolas e a todas as suas ações, façam-nas como encontram no evangelho de nosso Senhor.</p></section>
+
+<section class="page"><div class="eyebrow">Didaquê · Capítulo 16</div><h2>Vigilância e a vinda do Senhor</h2>
+<p>16. Vigiem pela vida de vocês; que as suas lâmpadas não se apaguem e os seus lombos não estejam descingidos (Lc 12.35), mas estejam preparados; pois vocês não sabem a hora em que vem o nosso Senhor (Mt 24.42). E reúnam-se com frequência, buscando o que convém às suas almas; pois todo o tempo da fé de vocês de nada lhes aproveitará, se não forem aperfeiçoados no último tempo.</p>
+<p>Pois nos últimos dias os falsos profetas e os corruptores se multiplicarão, as ovelhas se transformarão em lobos, e o amor se transformará em ódio. Pois, aumentando a iniquidade, odiarão uns aos outros, perseguirão e trairão (Mt 24.10-12). E então o enganador do mundo aparecerá como filho de Deus, e fará sinais e prodígios, e a terra será entregue nas suas mãos, e ele cometerá iniquidades que nunca houve desde o princípio do mundo.</p>
+<p>Então toda a humanidade criada virá ao fogo da prova, e muitos se escandalizarão e perecerão; mas os que perseverarem na sua fé serão salvos pela própria Maldição.</p>
+<p>E então aparecerão os sinais da verdade: primeiro, o sinal de uma abertura no céu; depois, o sinal do som de trombeta; e, em terceiro lugar, a ressurreição dos mortos; não de todos, porém, mas como foi dito: Virá o Senhor, e todos os santos com ele (Zc 14.5). Então o mundo verá o Senhor vindo sobre as nuvens do céu (Mt 24.30).</p></section>
+</div>
+<div class="source">
+<strong>Ficha editorial e fonte textual</strong><br>
+Autor desconhecido. Original em grego. Obra cristã antiga geralmente situada entre o final do século I e o início do século II. Texto português reproduzido da tradução publicada pela Igreja Metodista Livre, traduzida a partir da versão inglesa de J. B. Lightfoot (The Apostolic Fathers, Londres, Macmillan, 1891, ed. J. R. Harmer), conferida com imagens das páginas. A página-fonte informa que a tradução portuguesa é de domínio público e foi realizada com auxílio de inteligência artificial, sob orientação, revisão e responsabilidade editorial do Bispo José Ildo Swartele de Mello.<br>
+Fonte: <a href="https://metodistalivre.org.br/pais-apostolicos-didaque/" target="_blank" rel="noopener">Igreja Metodista Livre — Didaqué</a>. Consulta e reprodução para fins de estudo e preservação histórica. A tradução é indireta: do grego para o inglês e do inglês para o português.
+</div>
+</main>
+<script>
+const cover=document.getElementById('cover'), pages=[...document.querySelectorAll('.page')], total=pages.length;
+let current=-1;
+const titles=['Os dois caminhos','O segundo mandamento','Fugir do mal e praticar o bem','Deveres na comunidade','O caminho da morte','Fidelidade ao ensino','Sobre o batismo','Jejum e oração','A ação de graças eucarística','Ação de graças depois da refeição','Apóstolos e profetas','Acolhimento dos viajantes','Sustento dos profetas e mestres','A reunião no dia do Senhor','Bispos, diáconos e correção fraterna','Vigilância e a vinda do Senhor'];
+const toc=document.getElementById('toc');
+titles.forEach((t,i)=>{const b=document.createElement('button');b.textContent=`${String(i+1).padStart(2,'0')} · ${t}`;b.onclick=()=>show(i);toc.appendChild(b)});
+function show(n){current=n;cover.style.display=n===-1?'flex':'none';pages.forEach((p,i)=>p.classList.toggle('active',i===n));document.getElementById('counter').textContent=n===-1?'Capa':`Capítulo ${n+1} de ${total}`;document.getElementById('prev').disabled=n===-1;document.getElementById('next').disabled=n===total-1;document.getElementById('next').textContent=n===total-1?'Fim':'Próxima →';document.getElementById('bar').style.width=(n<0?0:(n+1)/total*100)+'%';window.scrollTo({top:0,behavior:'smooth'})}
+function move(d){if(current===-1&&d>0)show(0);else show(Math.max(-1,Math.min(total-1,current+d)))}
+function goCover(){show(-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')move(1);if(e.key==='ArrowLeft')move(-1)});
+show(-1);
+</script>
+</body></html>

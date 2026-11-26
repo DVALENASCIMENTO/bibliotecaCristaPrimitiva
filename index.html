@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca Cristã Primitiva — Editora Atalaia</title>
+
+    <meta name="description" content="Biblioteca Cristã Primitiva — Ministério Atalaia. Coleção de escritos do cristianismo dos primeiros séculos.">
+
+    <meta name="theme-color" content="#080909">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- LOGOMARCA -->
+
+    <header class="cabecalho">
+        <img
+            src="images/logo_editora_atalaia.png"
+            alt="Editora Atalaia"
+            class="logo-biblioteca">
+    </header>
+
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="hero">
+
+        <h1>Biblioteca Cristã Primitiva</h1>
+
+        <h2>Ministério Atalaia</h2>
+
+        <p>
+            Uma coleção dedicada à preservação, ao estudo e à divulgação
+            dos escritos do cristianismo dos primeiros séculos.
+            Conheça os testemunhos dos Pais Apostólicos, apologistas,
+            teólogos, historiadores da Igreja e documentos da literatura
+            cristã antiga.
+        </p>
+
+    </section>
+
+
+    <!-- PRATELEIRAS -->
+
+    <main class="biblioteca">
+
+        <div id="prateleirasBiblioteca"></div>
+
+    </main>
+
+
+    <!-- POPUP DO LIVRO -->
+
+    <div class="popup-livro" id="popupLivro" aria-hidden="true">
+
+        <div class="popup-livro-conteudo"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="livroTitulo">
+
+            <button
+                class="popup-fechar"
+                id="fecharPopup"
+                type="button"
+                aria-label="Fechar">
+                &times;
+            </button>
+
+            <div class="popup-livro-corpo">
+
+                <div class="popup-capa-area">
+                    <img id="livroCapa" src="" alt="Capa do livro">
+                </div>
+
+                <div class="popup-informacoes">
+
+                    <span class="popup-identificacao">
+                        EDITORA ATALAIA
+                    </span>
+
+                    <h2 id="livroTitulo"></h2>
+
+                    <h3 id="livroSubtitulo"></h3>
+
+                    <div class="popup-divisor"></div>
+
+                    <p id="livroDescricao"></p>
+
+                    <a
+                        href="#"
+                        id="livroFlipbook"
+                        class="popup-botao"
+                        target="_blank"
+                        rel="noopener">
+
+                        ABRIR FLIPBOOK
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="popup-assinatura">
+                EDITORA ATALAIA • MINISTÉRIO ATALAIA
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <p><strong>Biblioteca Cristã Primitiva</strong></p>
+
+        <p>Editora Atalaia • Ministério Atalaia</p>
+
+        <p>
+            Preservando a memória e os escritos do cristianismo primitivo.
+        </p>
+
+        <p class="rodape-direitos">
+            &copy; <span id="anoAtual"></span>
+            Ministério Atalaia. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT EXTERNO -->
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
